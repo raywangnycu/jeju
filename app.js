@@ -7,7 +7,9 @@ const DAYS = [
       ['08:10','宇進解酒湯','우진해장국',33.5115,126.5200,'flex','候位超過 30 分鐘就改附近早餐。',60],
       ['09:30','Island Stay 寄放行李','제주 아일랜드 스테이',33.5182,126.5274,'main','地址：제주시 임항로 36-1。住宿在 3–4 樓且無電梯。',60],
       ['11:30','DOTOREE Kitchen','도토리키친 제주',33.5148,126.5219,'main','午餐候位不可超過 30 分鐘。',60],
-      ['12:45','中央地下商街與 Olive Young','제주중앙지하상가',33.5135,126.5233,'main','購物控制在 75 分鐘內。',75],
+      ['12:45','中央地下商街與 Olive Young','제주중앙지하상가',33.5135,126.5233,'main','購物控制在 60 分鐘內。',60],
+      ['13:50','Mandarin Island 濟州限定香水','만다린 아일랜드',33.5139,126.5243,'main','必去。先以店家最新地圖核對舊城門市；預留 30 分鐘選香與採買。',30],
+      ['14:25','The Islander 選物／小香水','더 아일랜더',33.5135,126.5225,'flex','地址：제주시 관덕로4길 7；可與 Mandarin Island 同段完成。',25],
       ['15:30','Island Stay 入住休息','제주 아일랜드 스테이',33.5182,126.5274,'main','至少保留 75 分鐘休息。',75],
       ['17:00','東門傳統市場','동문재래시장',33.5127,126.5280,'main','晚餐、小吃與伴手禮。Umu 排隊太長就略過。',150],
       ['雨天','ARARIO Museum 塔洞','아라리오뮤지엄 탑동시네마',33.5171,126.5233,'backup','市區雨天備案，先確認休館日。',90]
@@ -41,13 +43,13 @@ const DAYS = [
     ]
   },
   {
-    id: 'D4', date: '10/1（四）', title: '西歸浦瀑布與安德展覽', note: '上午瀑布、下午室內展。牛沼河口只能取代其中一個瀑布，不另外加塞。',
+    id: 'D4', date: '10/1（四）', title: '休愛里、瀑布與安德展覽', note: '上午先完成必去休愛里，再進西歸浦。牛沼河口只能取代正房瀑布或下午行程之一。',
     stops: [
-      ['09:00','天地淵瀑布','천지연폭포',33.2447,126.5544,'main','保留 75 分鐘步道與拍照。',75],
-      ['10:20','正房瀑布','정방폭포',33.2449,126.5716,'main','步道濕滑時縮短。',55],
-      ['11:15','조림명가 午餐','조림명가 서귀포',33.2478,126.5710,'main','候位超過 20 分鐘改偶來市場。',60],
-      ['12:45','濟州 Waterworld 航海王展','워터월드 제주 원피스',33.2462,126.5093,'main','出發前確認展期、票券與最後入場。',120],
-      ['15:25','Dolcori Forest','돌코리숲',33.3062,126.3522,'main','週二休園；保留 60 分鐘。',60],
+      ['09:00','休愛里自然生活公園','휴애리 자연생활공원',33.3330,126.6344,'main','必去。地址：서귀포시 남원읍 신례동로 256；花況與柑橘體驗以當日公告為準。',125],
+      ['11:25','正房瀑布','정방폭포',33.2449,126.5716,'main','步道濕滑時縮短。',55],
+      ['12:30','조림명가 午餐','조림명가 서귀포',33.2478,126.5710,'main','候位超過 20 分鐘改偶來市場。',55],
+      ['13:45','濟州 Waterworld 航海王展','워터월드 제주 원피스',33.2462,126.5093,'main','出發前確認展期、票券與最後入場。',110],
+      ['15:55','Dolcori Forest','돌코리숲',33.3062,126.3522,'main','週二休園；保留 60 分鐘。',60],
       ['16:40','返回 The First70','서귀포 더퍼스트70 호텔',33.2480,126.5660,'main','不再補景點，留休息時間。',65],
       ['替換','牛沼河口','쇠소깍',33.2522,126.6230,'backup','取代天地淵或正房其中一個；往返與停留約 90–120 分鐘。',105]
     ]
@@ -68,7 +70,9 @@ const DAYS = [
   {
     id: 'D6', date: '10/3（六）', title: '涯月、西線採買與返程', note: '最晚 18:30 離開晚餐、19:30 還車。西部延誤時直接取消景點與購物。',
     stops: [
-      ['09:10','涯月漢潭海岸散步路','애월 한담해안산책로',33.4598,126.3104,'main','海岸散步與咖啡，保留至少 100 分鐘。',100],
+      ['08:50','Gonaeri 港前海岸道路・海豚觀察','고내리포구 앞 해안도로',33.4688,126.3523,'main','必去。Stanford Hotel & Resort Jeju 附近海岸；停 20 分鐘仔細觀察海面。野生海豚非定時出沒，勿追逐或餵食。',20],
+      ['09:15','ASISI 涯月紀念品','애월아시시',33.4693,126.3521,'main','必去。地址：제주시 애월읍 애월해안로 474 지하1층；預留 25 分鐘採買。',25],
+      ['10:00','涯月漢潭海岸散步路','애월 한담해안산책로',33.4598,126.3104,'main','海岸散步與咖啡，保留 90 分鐘；前段有延誤就縮短咖啡。',90],
       ['11:50','翰林刀削麵 濟州本店','한림칼국수 제주본점',33.4126,126.2682,'main','候位超過 20 分鐘改協載刀削麵。',70],
       ['13:15','月令里仙人掌群落','월령리 선인장군락지',33.3787,126.2153,'flex','雨天或延誤取消。',30],
       ['14:20','UNIQLO 濟州道南店','유니클로 제주도남점',33.4909,126.5263,'main','服飾採買約 60 分鐘。',60],
@@ -82,9 +86,51 @@ const DAYS = [
   }
 ];
 
-const state = { day: 0, location: null, accuracy: null, selected: null, markers: [], routeLine: null, userMarker: null, accuracyCircle: null, deferredPrompt: null };
+// 備用點位刻意與每日行程分圖呈現；座標供地圖定位，導航以韓文店名為準。
+const BACKUP_PLACES = [
+  ['Gonaeri 港前海岸道路・海豚觀察','고내리포구 앞 해안도로','景點／體驗','涯月','제주시 애월읍 고내리 포구 앞 해안도로 (Stanford Hotel & Resort Jeju 인근)',33.4688,126.3523,'必去。建議 08:50 左右短停觀察海面；野生海豚並非每天同時出現，請保持距離、不餵食。'],
+  ['ASISI 涯月紀念品','애월아시시','購物／伴手禮','涯月','제주시 애월읍 애월해안로 474 지하1층',33.4693,126.3521,'必去。紀念品、香氛與咖啡甜點可一起採買；營業時間請出發前確認。'],
+  ['鹽田春天 Aewol 店','소금빵집 봄날 애월점','咖啡甜點','涯月','제주시 애월읍 애월로 1길 24',33.4634,126.3091,'海邊鹽可頌；與漢潭散步同段。'],
+  ['Haejigae 海景咖啡','해지개','咖啡甜點','涯月','제주시 애월읍 애월북서길 52',33.4739,126.3517,'可看海與夕陽，適合作為涯月的替代咖啡。'],
+  ['Fritz Coffee Company 濟州','프릳츠 제주','咖啡甜點','濟州市區','제주시 구좌읍 동복로 5',33.5540,126.7060,'知名烘豆咖啡；請以地圖營業資訊為準。'],
+  ['London Bagel Museum Jeju','런던베이글뮤지엄 제주','咖啡甜點','東線','제주시 구좌읍 동복로 85',33.4359,126.7195,'D2 彈性午點；候位超過 15 分鐘就跳過。'],
+  ['Audrant Bakery','아오랑 베이커리','咖啡甜點','咸德','제주시 조천읍 조함해안로 552-3',33.5431,126.6691,'咸德海邊麵包，可與 D2 一起選。'],
+  ['TEAM BLOW CAFE','카페 팀블로우','咖啡甜點','涯月','제주시 애월읍 애월로 19-5',33.4609,126.3108,'漢潭海岸上方的海景咖啡。'],
+  ['Gyulmedal House','귤메달 하우스','咖啡甜點','舊城／塔洞','제주시 탑동로 17',33.5180,126.5226,'柑橘甜點與飲品，可併入 D1 塔洞。'],
+  ['UMU 布丁','우무','咖啡甜點','東門市場','제주시 관덕로8길 40-1',33.5125,126.5272,'東門市場外；原味有奶香，依口味選購。'],
+  ['Abebe Bakery','아베베 베이커리 제주점','咖啡甜點','東門市場','제주시 동문로 6',33.5127,126.5280,'冰麵包；早一點去選擇較多。'],
+  ['牛島冰淇淋','우도땅콩아이스크림','咖啡甜點','牛島','제주시 우도면 우도해안길 1200-6',33.5064,126.9534,'牛島移動時的在地甜點。'],
+  ['Mochiron 達克瓦茲','모찌롱','購物／伴手禮','新濟州','제주시 노연로 69 신라면세점 1층',33.4843,126.4896,'新羅免稅店一樓；可與免稅採買一起完成。'],
+  ['Mandarin Island 濟州限定香水','만다린 아일랜드','購物／伴手禮','舊城／塔洞','제주시 관덕로 일대 · 出發前以品牌官方地圖確認門市',33.5139,126.5243,'必去。濟州限定香水；店點可能異動，請點導航後核對。'],
+  ['The Islander','더 아일랜더','購物／伴手禮','舊城／塔洞','제주시 관덕로4길 7',33.5135,126.5225,'濟州選物與小香水，可順逛東門市場。'],
+  ['Hetras 香水店','헤트라스 제주','購物／伴手禮','濟州市區','제주시 노형동 일대 · 出發前確認分店',33.4855,126.4805,'香氛選物；以導航搜尋韓文名選最近分店。'],
+  ['My Jeju Gift','마이제주 기프트','購物／伴手禮','舊城／塔洞','제주시 관덕로 일대 · 出發前確認門市',33.5137,126.5238,'紀念品店，適合補貨。'],
+  ['Welcome Jeju','웰컴제주','購物／伴手禮','舊城／塔洞','제주시 관덕로 일대 · 出發前確認門市',33.5137,126.5238,'紀念品與伴手禮；以導航確認當日店點。'],
+  ['Lounge J','라운지제이','購物／伴手禮','機場西側','제주시 도두일동 697',33.5055,126.4718,'可排在機場／還車前後。'],
+  ['Olive Young 中央地下商街','올리브영 제주중앙지하상가점','購物／伴手禮','舊城／塔洞','제주시 중앙로 지하 60',33.5135,126.5233,'D1 固定逛街段已有安排。'],
+  ['Daiso 東門市場店','다이소 제주동문시장점','購物／伴手禮','東門市場','제주시 동문로 14',33.5129,126.5271,'旅行小物、收納與零食補給。'],
+  ['新羅免稅店濟州店','신라면세점 제주점','購物／伴手禮','新濟州','제주시 노연로 69',33.4843,126.4896,'與 Mochiron 同棟，可先比價。'],
+  ['樂天免稅店濟州店','롯데면세점 제주점','購物／伴手禮','新濟州','제주시 도령로 83',33.4891,126.4888,'與新羅比價後再買。'],
+  ['樂天百貨濟州店','롯데백화점 제주점','購物／伴手禮','新濟州','제주시 도령로 83',33.4891,126.4888,'服飾、鞋帽、餐飲一次逛。'],
+  ['東門傳統市場','동문재래시장','市場小吃','東門市場','제주시 관덕로14길 20',33.5127,126.5280,'3 號門：五日場辣炒年糕／魚板／血腸（BP 同款）、Solbre；另找水果大福與現榨橘子汁。'],
+  ['Solbre 冰淇淋可頌','솔브레','市場小吃','東門市場','제주시 동문로 16 일대 · 3號門附近',33.5129,126.5278,'東門市場 3 號門進來一帶；依現場招牌確認。'],
+  ['三無麵條','삼무국수','正餐','新濟州','제주시 삼무로3길 46',33.4894,126.4930,'原始清單地址：271-10 Yeon-dong。'],
+  ['Dodoreum 韓牛黑豬烤肉','도두름','正餐','新濟州','제주시 연동 272-2',33.4868,126.4914,'韓牛與黑豬烤肉；晚餐建議先確認候位。'],
+  ['萬德參雞湯','만덕삼계탕','正餐','新濟州','제주시 노형동 923-17',33.4851,126.4778,'適合雨天或想吃熱湯的備案。'],
+  ['BHC 炸雞','BHC 치킨','正餐','全島外送','住宿地址下單（배달의민족 App）',33.5071,126.4928,'不設固定店圖釘；以飯店地址在外送民族搜尋最近門市。'],
+  ['橋村炸雞','교촌치킨','正餐','全島多分店','以 Naver／Kakao 搜尋住宿附近分店',33.5071,126.4928,'分店眾多，適合用導航找最近門市。'],
+  ['女王韓服','여왕한복','景點／體驗','舊城／塔洞','제주시 관덕로 일대 · 預約前確認地址',33.5135,126.5233,'與牧官衙、觀德亭一起拍照最順。'],
+  ['牧官衙・觀德亭','제주목 관아 / 관덕정','景點／體驗','舊城／塔洞','제주시 관덕로 25',33.5139,126.5234,'舊城文化景點，可和 D1 購物串聯。'],
+  ['月汀里沙灘','월정리해변','景點／體驗','東線','제주시 구좌읍 월정리 33-3',33.5561,126.7938,'海邊咖啡可找 Mongle 二樓，依天氣調整。'],
+  ['城山日出峰','성산일출봉','景點／體驗','城山','서귀포시 성산읍 성산리 1',33.4581,126.9425,'已排 D3 清晨主行程。'],
+  ['涉地可支','섭지코지','景點／體驗','城山','서귀포시 성산읍 섭지코지로 107',33.4239,126.9306,'已列 D3 彈性點，牛島船班順利才去。']
+];
+const BACKUP_TYPES = ['全部','咖啡甜點','購物／伴手禮','市場小吃','正餐','景點／體驗'];
+const state = { day: 0, location: null, accuracy: null, selected: null, markers: [], routeLine: null, userMarker: null, accuracyCircle: null, deferredPrompt: null, backupType: '全部', backupMarkers: [] };
 const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([33.38, 126.55], 10);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+const backupMap = L.map('backupMap', { zoomControl: true, preferCanvas: true }).setView([33.38, 126.55], 10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(backupMap);
 const dayTabs = document.querySelector('#dayTabs');
 const stopList = document.querySelector('#stopList');
 const gpsStatus = document.querySelector('#gpsStatus');
@@ -108,6 +154,41 @@ function pinIcon(index, kind) {
 function showToast(text) {
   toast.textContent = text; toast.classList.add('show');
   clearTimeout(showToast.timer); showToast.timer = setTimeout(()=>toast.classList.remove('show'), 2400);
+}
+function backupColor(type) {
+  return ({'咖啡甜點':'#b45309','購物／伴手禮':'#7c3aed','市場小吃':'#db2777','正餐':'#dc2626','景點／體驗':'#15803d'})[type] || '#0284c7';
+}
+function backupIcon(place) {
+  return L.divIcon({ className: '', html: `<div class="backup-pin" style="--pin:${backupColor(place[2])}"><span>●</span></div>`, iconSize:[27,27], iconAnchor:[13,26], popupAnchor:[0,-25] });
+}
+function backupNavHtml(place) {
+  const query = encodeURIComponent(`${place[1]} 제주`);
+  return `<div class="popup-title">${place[0]}</div><div class="popup-address">${place[4]}</div><a class="popup-nav" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(place[1])}">Naver 導航</a> · <a class="popup-nav" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${query}">Google 地圖</a>`;
+}
+function renderBackup() {
+  const visible = BACKUP_PLACES.filter(p => state.backupType === '全部' || p[2] === state.backupType);
+  const filters = document.querySelector('#backupFilters');
+  filters.innerHTML = BACKUP_TYPES.map(type => `<button class="filter-button ${state.backupType === type ? 'selected' : ''}" data-type="${type}" type="button">${type}</button>`).join('');
+  filters.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { state.backupType = btn.dataset.type; renderBackup(); }));
+  state.backupMarkers.forEach(marker => backupMap.removeLayer(marker)); state.backupMarkers = [];
+  const bounds = [];
+  visible.forEach(place => {
+    const marker = L.marker([place[5], place[6]], { icon: backupIcon(place) }).addTo(backupMap).bindPopup(backupNavHtml(place));
+    state.backupMarkers.push(marker); bounds.push([place[5], place[6]]);
+  });
+  document.querySelector('#backupCount').textContent = `顯示 ${visible.length} 個備用點 · 點選地址可導航`;
+  document.querySelector('#backupList').innerHTML = visible.map(place => `<article class="backup-card"><span class="backup-type" style="--tag:${backupColor(place[2])}">${place[2]}</span><h3>${place[0]}</h3><p class="ko-name">${place[1]}</p><p class="address">地址：${place[4]}</p><p>${place[7]}</p><div class="stop-actions"><button class="show-button" data-backup-show="${BACKUP_PLACES.indexOf(place)}">地圖顯示</button><a class="navigate-button link-button" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(place[1])}">Naver 導航</a></div></article>`).join('');
+  document.querySelectorAll('[data-backup-show]').forEach(btn => btn.addEventListener('click', () => {
+    const place = BACKUP_PLACES[Number(btn.dataset.backupShow)]; backupMap.setView([place[5], place[6]], 15, { animate: true });
+  }));
+  if (bounds.length) backupMap.fitBounds(bounds, { padding:[30,30], maxZoom:11 });
+}
+function showView(view) {
+  const itinerary = view === 'itinerary';
+  document.querySelector('#itineraryView').hidden = !itinerary;
+  document.querySelector('#backupView').hidden = itinerary;
+  document.querySelectorAll('.view-button').forEach(btn => btn.classList.toggle('active', btn.dataset.view === view));
+  setTimeout(() => { if (itinerary) map.invalidateSize(); else { backupMap.invalidateSize(); renderBackup(); } }, 0);
 }
 function renderTabs() {
   dayTabs.innerHTML = DAYS.map((d,i)=>`<button class="day-tab" role="tab" aria-selected="${i===state.day}" data-day="${i}"><strong>${d.id}</strong><small>${d.date}</small></button>`).join('');
@@ -184,8 +265,15 @@ function nearest() {
 document.querySelector('#locateBtn').addEventListener('click',locate);
 document.querySelector('#fitDayBtn').addEventListener('click',renderMarkers);
 document.querySelector('#nearestBtn').addEventListener('click',nearest);
+document.querySelectorAll('.view-button').forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));
+document.querySelector('#fitBackupBtn').addEventListener('click',()=>{
+  const visible = state.backupMarkers.map(marker => marker.getLatLng());
+  if (visible.length) backupMap.fitBounds(visible,{padding:[30,30],maxZoom:11});
+});
+document.querySelector('#clearFiltersBtn').addEventListener('click',()=>{state.backupType='全部';renderBackup();});
 document.querySelector('#copyPlaceBtn').addEventListener('click',async()=>{if(!state.selected)return;await navigator.clipboard.writeText(state.selected[2]);showToast('已複製韓文地標名稱');});
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.deferredPrompt=e;document.querySelector('#installBtn').hidden=false;});
 document.querySelector('#installBtn').addEventListener('click',async()=>{if(!state.deferredPrompt)return;state.deferredPrompt.prompt();await state.deferredPrompt.userChoice;state.deferredPrompt=null;document.querySelector('#installBtn').hidden=true;});
 if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));
 renderAll();
+renderBackup();
