@@ -168,6 +168,24 @@ const BACKUP_PLACES = [
   ['獨立岩','외돌개','景點／體驗','西歸浦','서귀포시 서홍동 791',33.2390,126.5424,'西歸浦海岸散步與礁岩地景；可替換其中一個瀑布。'],
   ['黃牛地海岸','황우지해안','景點／體驗','西歸浦','서귀포시 서홍동 766-1',33.2396,126.5452,'天然岩池海岸；海況不佳時不要下水。']
 ];
+
+// 預約資訊刻意只列出已確認的官方／店家操作方式；其餘一律標示現場候位，避免把不可靠的網路攻略當成訂位規則。
+const BOOKING_GUIDES = {
+  '우진해장국': { label: '現場候位', text: '未找到可供旅客使用的官方遠端候位。建議開店前 20–30 分鐘到；超過 30 分鐘就依行程改附近早餐。' },
+  '도토리키친 제주': { label: '現場候位', text: '未確認可預約時段；到店先確認候位，超過 30 分鐘就啟用替代午餐。' },
+  '스누피가든': { label: '選做：先買電子票', text: '一般可直接入園，非必須時段預約；週末／連假可先從官方網站購買電子票並提早到，避免售票處排隊。', url: 'https://www.snoopygarden.com/', link: '官方網站／電子票' },
+  '런던베이글뮤지엄 제주': { label: '必做：當日遠端候位', text: '用 CATCHTABLE Global 註冊後，濟州店目前每日 09:00–18:00 可取當日遠端候位號。叫號後不可往後延，請在停車完成、距離店家不遠時再取號；收到通知立刻前往。這不是預約座位。', url: 'https://www.catchtable.net/shop/london_bagel_museum_jeju?from=share', link: '開啟 CATCHTABLE 候位' },
+  '아쿠아플라넷 제주': { label: '建議：先買線上票', text: '非指定時段制，但建議先買官方線上入場券，入館後依 Ocean Arena 當日節目時間安排行程；出發當天再核對演出表。', url: 'https://m.aquaplanet.co.kr/jeju/guide/ticket/online-ticket.do', link: '官方線上入場券' },
+  '성산포항 종합여객터미널': { label: '船班：當日現場辦理', text: '牛島航線受風浪影響，先查當日開航與末班返程。通常現場填登船資料、購票後依序上船；請攜護照並預留至少 45 分鐘，不把行程建立在特定船班保證上。' },
+  '휴애리 자연생활공원': { label: '入園免預約；體驗先確認', text: '一般散步入園不需預約。柑橘採摘為季節性活動，會受果況與現場影響；出發前到官方網站或致電 064-732-2114 確認當日是否開放與截止時間。', url: 'https://www.hueree.com/', link: '休愛里官方資訊' },
+  '워터월드 제주 원피스': { label: '先確認展期與票券', text: '展覽檔期與票種可能變動，先確認當日是否仍展出及最後入場；確認後再買票，勿先把不可退票券綁死下午行程。' },
+  '용머리해안': { label: '不能預約：看海況', text: '入內受潮汐、風浪與安全管制影響；當天開放才買現場票。不要先買其他不可調整的行程來配合它。' },
+  '아르떼뮤지엄 제주': { label: '建議：先買電子票', text: '可先於官方網站買電子票以減少現場購票；通常非指定時段，仍要依當日閉館與最後入場時間決定是否前往。', url: 'https://artemuseum.com/jeju/', link: 'ARTE Museum 官方票券' },
+  '여왕한복': { label: '必做：先選店後預約', text: '韓服租借需預約才能保留尺寸與拍攝時段。此手冊目前僅存區域定位，請先用韓文名在 Naver Map 確認實際門市，再從店家 Naver 預約／KakaoTalk 預約完成後更新導航點。' },
+  '한림칼국수 제주본점': { label: '現場候位', text: '未確認可供旅客使用的官方遠端候位；午餐尖峰到店先抽現場號，超過 20 分鐘就改協載刀削麵。' },
+  'BHC 치킨': { label: '外送：到飯店再下單', text: '以住宿地址在 배달의민족（Baemin）搜尋最近門市、選外送並填房號／大廳交付說明。韓國外送 App 可能要求韓國手機號碼；不順時請飯店櫃台協助，或改自取。' },
+  '숙성도': { label: '建議：CATCHTABLE 候位', text: '熱門黑豬肉店，出發前一天先在 CATCHTABLE 搜尋門市；若店家開放遠端候位，務必於通知前抵達附近，否則改用現場候位或備用餐廳。', url: 'https://www.catchtable.net/', link: '開啟 CATCHTABLE' }
+};
 const BACKUP_TYPES = ['全部','咖啡甜點','購物／伴手禮','市場小吃','正餐','景點／體驗'];
 const state = { day: 0, location: null, accuracy: null, selected: null, markers: [], routeLine: null, userMarker: null, accuracyCircle: null, deferredPrompt: null, backupType: '全部', backupMarkers: [] };
 const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([33.38, 126.55], 10);
@@ -204,6 +222,12 @@ function backupColor(type) {
 function backupIcon(place) {
   return L.divIcon({ className: '', html: `<div class="backup-pin" style="--pin:${backupColor(place[2])}"><span>●</span></div>`, iconSize:[27,27], iconAnchor:[13,26], popupAnchor:[0,-25] });
 }
+function bookingGuideHtml(koreanName) {
+  const guide = BOOKING_GUIDES[koreanName];
+  if (!guide) return '';
+  const link = guide.url ? ` <a target="_blank" rel="noopener" href="${guide.url}">${guide.link}</a>` : '';
+  return `<aside class="booking-guide"><strong>預約／候位｜${guide.label}</strong><span>${guide.text}${link}</span></aside>`;
+}
 function backupNavHtml(place) {
   const query = encodeURIComponent(`${place[1]} 제주`);
   return `<div class="popup-title">${place[0]}</div><div class="popup-address">${place[4]}</div><a class="popup-nav" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(place[1])}">Naver 導航</a> · <a class="popup-nav" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${query}">Google 地圖</a>`;
@@ -220,7 +244,7 @@ function renderBackup() {
     state.backupMarkers.push(marker); bounds.push([place[5], place[6]]);
   });
   document.querySelector('#backupCount').textContent = `顯示 ${visible.length} 個備用點 · 點選地址可導航`;
-  document.querySelector('#backupList').innerHTML = visible.map(place => `<article class="backup-card"><span class="backup-type" style="--tag:${backupColor(place[2])}">${place[2]}</span><h3>${place[0]}</h3><p class="ko-name">${place[1]}</p><p class="address">地址：${place[4]}</p><p>${place[7]}</p><div class="stop-actions"><button class="show-button" data-backup-show="${BACKUP_PLACES.indexOf(place)}">地圖顯示</button><a class="navigate-button link-button" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(place[1])}">Naver 導航</a></div></article>`).join('');
+  document.querySelector('#backupList').innerHTML = visible.map(place => `<article class="backup-card"><span class="backup-type" style="--tag:${backupColor(place[2])}">${place[2]}</span><h3>${place[0]}</h3><p class="ko-name">${place[1]}</p><p class="address">地址：${place[4]}</p><p>${place[7]}</p>${bookingGuideHtml(place[1])}<div class="stop-actions"><button class="show-button" data-backup-show="${BACKUP_PLACES.indexOf(place)}">地圖顯示</button><a class="navigate-button link-button" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(place[1])}">Naver 導航</a></div></article>`).join('');
   document.querySelectorAll('[data-backup-show]').forEach(btn => btn.addEventListener('click', () => {
     const place = BACKUP_PLACES[Number(btn.dataset.backupShow)]; backupMap.setView([place[5], place[6]], 15, { animate: true });
   }));
@@ -248,7 +272,7 @@ function renderDay() {
     return `<article class="stop-card ${s[5]}" data-index="${i}">
       <div class="stop-time">${s[0]}${duration}</div>
       <div><div class="stop-header"><div><h3>${s[1]}</h3><p class="ko-name">${s[2]}</p></div>${dist?`<span class="distance">${dist}</span>`:''}</div>
-      <p class="stop-note">${s[6]}</p><div class="stop-actions"><button class="navigate-button" data-nav="${i}">選擇導航</button><button class="show-button" data-show="${i}">地圖顯示</button></div></div>
+      <p class="stop-note">${s[6]}</p>${bookingGuideHtml(s[2])}<div class="stop-actions"><button class="navigate-button" data-nav="${i}">選擇導航</button><button class="show-button" data-show="${i}">地圖顯示</button></div></div>
     </article>`;
   }).join('');
   stopList.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>openNav(Number(b.dataset.nav))));

@@ -123,6 +123,9 @@ h2 { margin-bottom: 8px; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.
 .stop-header h3 { margin: 0 0 2px; font-size: 1rem; line-height: 1.3; }
 .ko-name { margin: 0; color: var(--muted); font-size: .82rem; }
 .stop-note { margin: 8px 0; color: #334e68; font-size: .87rem; }
+.booking-guide { display: grid; gap: 3px; margin: 9px 0; padding: 9px 10px; border: 1px solid #fde68a; border-radius: 11px; color: #78350f; background: #fffbeb; font-size: .81rem; line-height: 1.45; }
+.booking-guide strong { color: #92400e; font-size: .78rem; }
+.booking-guide a { color: #0369a1; font-weight: 900; text-decoration: underline; text-underline-offset: 2px; }
 .distance { flex: none; padding: 3px 8px; border-radius: 999px; color: #075985; background: var(--sky); font-size: .76rem; font-weight: 800; }
 .stop-actions { display: flex; gap: 8px; }
 .stop-actions button { min-height: 40px; padding: 8px 13px; border-radius: 11px; font-weight: 800; }
