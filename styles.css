@@ -94,12 +94,32 @@ h2 { margin-bottom: 8px; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.
 .backup-card p { margin: 7px 0; color: #334e68; font-size: .87rem; }
 .backup-card .ko-name { color: var(--muted); }
 .backup-card .address { color: #075985; font-weight: 700; }
+.map-check { margin: 7px 0; padding: 7px 9px; border-left: 3px solid #0ea5e9; border-radius: 0 8px 8px 0; background: #f0f9ff; color: #075985; font-size: .78rem; line-height: 1.45; }
+.map-check.pending { border-left-color: #d97706; background: #fffbeb; color: #92400e; }
+.location-pending { border-color: #f59e0b; background: #fffdf6; }
 .backup-type { display: inline-block; padding: 2px 8px; border-radius: 999px; color: var(--tag); background: color-mix(in srgb, var(--tag) 12%, white); font-size: .72rem; font-weight: 900; }
 .link-button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 .backup-pin { display: grid; place-items: center; width: 27px; height: 27px; border: 3px solid white; border-radius: 50% 50% 50% 8px; color: white; background: var(--pin); box-shadow: 0 4px 10px rgba(8,47,73,.3); font-size: 12px; transform: rotate(-45deg); }
 .backup-pin span { transform: rotate(45deg); }
 .popup-address { max-width: 230px; margin-top: 4px; color: var(--muted); font-size: .78rem; }
 .field-notes { margin-top: 18px; padding: 20px; border: 1px solid #bae6fd; border-radius: 18px; background: linear-gradient(135deg,#f0f9ff,#fff); }
+.route-guides { margin-top: 20px; }
+.guide-heading { max-width: 800px; margin-bottom: 13px; }
+.guide-heading .eyebrow { color: var(--ocean); }
+.guide-heading > p:last-child { margin-bottom: 0; color: var(--muted); }
+.guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+.route-guide-card { padding: 17px; border: 1px solid var(--line); border-top: 4px solid var(--orange); border-radius: 17px; background: rgba(255,255,255,.96); box-shadow: 0 5px 18px rgba(8,47,73,.07); }
+.route-guide-card:nth-child(2n) { border-top-color: var(--ocean); }
+.route-guide-card h3 { margin: 3px 0 4px; font-size: 1.12rem; }
+.guide-kicker { margin: 0; color: #9a3412; font-size: .73rem; font-weight: 900; letter-spacing: .06em; }
+.route-guide-card:nth-child(2n) .guide-kicker { color: #0369a1; }
+.guide-address { margin: 0 0 10px; color: var(--muted); font-size: .8rem; }
+.route-guide-card ol { margin: 0; padding-left: 1.25rem; color: #334e68; font-size: .88rem; }
+.route-guide-card li + li { margin-top: 7px; }
+.route-guide-card em { color: #075985; font-style: normal; font-weight: 800; }
+.guide-tip { margin: 11px 0 0; padding: 9px 10px; border-radius: 10px; color: #365314; background: #f7fee7; font-size: .81rem; }
+.guide-links { display: flex; flex-wrap: wrap; gap: 9px; margin: 11px 0 0; }
+.guide-links a { display: inline-flex; align-items: center; min-height: 34px; padding: 5px 9px; border: 1px solid #bae6fd; border-radius: 9px; color: #0369a1; background: white; font-size: .8rem; font-weight: 900; text-decoration: none; }
 .field-notes h2 { margin-bottom: 13px; color: #075985; }
 .field-note-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
 .field-note-grid p { margin: 0; padding: 12px; border-radius: 12px; color: #334e68; background: rgba(255,255,255,.75); font-size: .87rem; }
@@ -124,8 +144,13 @@ h2 { margin-bottom: 8px; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.
 .ko-name { margin: 0; color: var(--muted); font-size: .82rem; }
 .stop-note { margin: 8px 0; color: #334e68; font-size: .87rem; }
 .booking-guide { display: grid; gap: 3px; margin: 9px 0; padding: 9px 10px; border: 1px solid #fde68a; border-radius: 11px; color: #78350f; background: #fffbeb; font-size: .81rem; line-height: 1.45; }
+.order-guide { display: grid; gap: 3px; margin: 9px 0; padding: 9px 10px; border: 1px solid #ddd6fe; border-radius: 11px; color: #4c1d95; background: #f5f3ff; font-size: .81rem; line-height: 1.45; }
+.order-guide strong { color: #5b21b6; font-size: .78rem; }
 .booking-guide strong { color: #92400e; font-size: .78rem; }
 .booking-guide a { color: #0369a1; font-weight: 900; text-decoration: underline; text-underline-offset: 2px; }
+.visit-info { display: grid; gap: 3px; margin: 9px 0; padding: 9px 10px; border: 1px solid #bae6fd; border-radius: 11px; color: #164e63; background: #f0f9ff; font-size: .81rem; line-height: 1.45; }
+.visit-info strong { color: #075985; font-size: .78rem; }
+.visit-info a { color: #0369a1; font-weight: 900; text-decoration: underline; text-underline-offset: 2px; }
 .distance { flex: none; padding: 3px 8px; border-radius: 999px; color: #075985; background: var(--sky); font-size: .76rem; font-weight: 800; }
 .stop-actions { display: flex; gap: 8px; }
 .stop-actions button { min-height: 40px; padding: 8px 13px; border-radius: 11px; font-weight: 800; }
@@ -161,6 +186,7 @@ h2 { margin-bottom: 8px; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.
   .itinerary-column { order: 2; }
   .backup-view { padding-inline: 12px; }
   .backup-workspace { display: flex; flex-direction: column; }
+  .guide-grid { grid-template-columns: 1fr; }
   .backup-map-column { position: static; }
   #backupMap { height: 43vh; min-height: 330px; border-radius: 17px; }
   .field-note-grid { grid-template-columns: 1fr; }
