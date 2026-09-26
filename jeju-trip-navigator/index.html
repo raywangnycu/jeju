@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#082f49">
+  <meta name="description" content="濟州島六日行程、即時定位與多地圖備援導航">
+  <title>濟州六日備援導航</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23082f49'/%3E%3Cpath d='M12 43c10-2 12-18 21-18 8 0 9 11 19 15' fill='none' stroke='%2338bdf8' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='33' cy='21' r='7' fill='%23f97316'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">9/28–10/3 · 自駕</p>
+      <h1>濟州六日備援導航</h1>
+    </div>
+    <button id="locateBtn" class="primary-button" type="button" aria-label="取得目前位置">
+      <span aria-hidden="true">◎</span><span>定位我</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="control-panel" aria-label="行程控制">
+      <div class="status-row">
+        <span id="gpsStatus" class="status-pill">尚未取得位置</span>
+        <button id="installBtn" class="text-button" type="button" hidden>加到主畫面</button>
+      </div>
+      <div id="dayTabs" class="day-tabs" role="tablist" aria-label="選擇行程日期"></div>
+    </section>
+
+    <section class="workspace">
+      <div class="map-column">
+        <div id="map" aria-label="濟州島行程地圖"></div>
+        <div class="map-tools">
+          <button id="fitDayBtn" type="button">顯示本日全部</button>
+          <button id="nearestBtn" type="button">找最近景點</button>
+        </div>
+        <p class="map-credit">地圖：OpenStreetMap。藍色虛線只表示行程順序，不代表實際道路；導航會交給你選擇的地圖服務。</p>
+      </div>
+
+      <div class="itinerary-column">
+        <article class="day-summary">
+          <div class="day-photo" role="img" aria-label="城山日出峰日出"></div>
+          <div>
+            <p id="dayDate" class="eyebrow"></p>
+            <h2 id="dayTitle"></h2>
+            <p id="dayNote"></p>
+          </div>
+        </article>
+        <div class="legend" aria-label="標示說明">
+          <span><i class="dot main"></i>固定行程</span>
+          <span><i class="dot flex"></i>彈性</span>
+          <span><i class="dot backup"></i>備案</span>
+        </div>
+        <div id="stopList" class="stop-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="navDialog" class="nav-dialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="關閉">×</button>
+    </form>
+    <p class="eyebrow">選擇導航服務</p>
+    <h2 id="navTitle"></h2>
+    <p id="navSubtitle" class="dialog-subtitle"></p>
+    <div id="navOptions" class="nav-options"></div>
+    <button id="copyPlaceBtn" class="copy-button" type="button">複製韓文地標名稱</button>
+    <p class="safety-note">請在停車後操作手機。開始駕駛前，先確認導航終點名稱與方向。</p>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

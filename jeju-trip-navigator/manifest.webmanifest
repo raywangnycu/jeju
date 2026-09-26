@@ -1,0 +1,11 @@
+{
+  "name": "濟州六日備援導航",
+  "short_name": "濟州導航",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f9fc",
+  "theme_color": "#082f49",
+  "lang": "zh-Hant",
+  "description": "濟州島六日行程、定位與多地圖備援導航",
+  "icons": []
+}
