@@ -134,6 +134,9 @@ h2 { margin-bottom: 8px; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.
 .dot.flex { background: var(--orange); }
 .dot.backup { background: #94a3b8; }
 .stop-list { display: grid; gap: 10px; }
+.departure-card { display: grid; gap: 4px; padding: 13px 15px; border: 1px solid #a7f3d0; border-left: 5px solid #059669; border-radius: 16px; color: #065f46; background: linear-gradient(135deg,#ecfdf5,#f0fdfa); box-shadow: 0 5px 18px rgba(8,47,73,.07); font-size: .88rem; line-height: 1.45; }
+.departure-card strong { font-size: .94rem; }
+.departure-card small { color: #47706a; font-size: .76rem; }
 .stop-card { display: grid; grid-template-columns: 72px 1fr; gap: 12px; padding: 13px; border: 1px solid var(--line); border-left: 5px solid var(--ocean); border-radius: 16px; background: rgba(255,255,255,.94); box-shadow: 0 5px 18px rgba(8,47,73,.07); }
 .stop-card.flex { border-left-color: var(--orange); }
 .stop-card.backup { border-left-color: #94a3b8; }
