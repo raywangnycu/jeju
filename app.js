@@ -72,17 +72,17 @@ const DAYS = [
     ]
   },
   {
-    id: 'D5', date: '10/2（五）', title: '茶園、博物館與西岸', note: '龍頭海岸依潮汐與風浪決定。17:15 是 ARTE 決策點，延誤直接去機場附近住宿。', departure: { time: '08:45 從 The First70 出發', drive: '開車約 65–70 分鐘到 OSULLOC；09:50 左右抵達停車場，10:00 開始逛。' },
+    id: 'D5', date: '10/2（五）', title: '茶園、博物館、濟州堂與西岸', note: '必去的濟州堂已固定排在本態博物館後，作為 D5 午餐與大型烘焙咖啡停留。龍頭海岸依潮汐與風浪決定；ARTE 是彈性點，延誤就直接去機場附近住宿。', departure: { time: '08:45 從 The First70 出發', drive: '開車約 65–70 分鐘到 OSULLOC；09:50 左右抵達停車場，10:00 開始逛。' },
     stops: [
       ['08:30','The First70 早餐・D5 早餐','더퍼스트70호텔',33.2472532,126.5668482,'main','飯店早餐優先；未含早餐時使用前晚買好的飯捲＋優格＋橘子優酪乳，08:45 出發前往 OSULLOC。',15],
       ['10:00','OSULLOC 茶博物館・D5 上午茶點','오설록 티뮤지엄',33.3059196,126.2894903,'main','茶飲配一份綠茶甜點即可，早餐已在飯店完成；與 Innisfree Jeju House合計 95 分鐘。',95],
       ['11:50','本態博物館','본태박물관',33.3037709,126.3924797,'main','至少 90–95 分鐘。',95],
-      ['13:35','In’s Mill・D5 午餐','인스밀',33.2384811,126.2292343,'main','D5 固定午餐：點一份主食搭飲料即可；候位超過 20 分鐘才改安德簡餐，避免壓縮龍頭海岸。',55],
-      ['14:45','山房山與龍頭海岸','용머리해안',33.2316603,126.3147237,'main','龍頭海岸只在開放時入內。',80],
-      ['16:45','新昌風車海岸道路','신창풍차해안도로',33.3430810,126.1742061,'flex','含移動與短停；風大、下雨或延誤就略過。',30],
-      ['17:55','ARTE Museum Jeju','아르떼뮤지엄 제주',33.3967005,126.3450106,'flex','只有 17:15 前離開新昌才前往。',105],
-      ['20:20','Hotel Mer Bleue Jeju','메르블루호텔',33.5113026,126.4841728,'main','地址：제주시 서해안로 368。機場附近住宿。',45],
-      ['20:30','BHC 外送・D5 晚餐','메르블루호텔',33.5113026,126.4841728,'main','D5 固定晚餐：圖釘是外送送達飯店，不是 BHC 分店。抵達飯店後用 Baemin 下單到大廳／房號；若 App 無法付款，請櫃台協助或改最近門市自取。',45],
+      ['13:50','濟州堂・D5 午餐／烘焙咖啡','제주당',33.3643380,126.3552026,'main','必去。地址：제주시 애월읍 월각로 927；本態博物館後開車約 20 分鐘。大型農場風烘焙咖啡，固定在此吃午餐；10:00–21:00，餐廳最後點餐 18:30、咖啡最後點餐 20:30（出發當日仍核對公告）。',70],
+      ['15:40','山房山與龍頭海岸','용머리해안',33.2316603,126.3147237,'main','從濟州堂開車約 45 分鐘；龍頭海岸只在開放時入內。',80],
+      ['17:40','新昌風車海岸道路','신창풍차해안도로',33.3430810,126.1742061,'flex','含移動與短停；風大、下雨或延誤就略過。',25],
+      ['18:40','ARTE Museum Jeju','아르떼뮤지엄 제주',33.3967005,126.3450106,'flex','只有 18:00 前離開新昌才前往；需在官方當日最晚入場時間前抵達。',75],
+      ['20:30','Hotel Mer Bleue Jeju','메르블루호텔',33.5113026,126.4841728,'main','地址：제주시 서해안로 368。機場附近住宿。',30],
+      ['20:40','BHC 外送・D5 晚餐','메르블루호텔',33.5113026,126.4841728,'main','D5 固定晚餐：圖釘是外送送達飯店，不是 BHC 分店。抵達飯店後用 Baemin 下單到大廳／房號；若 App 無法付款，請櫃台協助或改最近門市自取。',45],
       ['雨天','山房山碳酸溫泉','제주산방산탄산온천',33.2489093,126.2987403,'backup','龍頭海岸關閉或疲勞時替換；泡湯就取消新昌或 ARTE。',120]
     ]
   },
@@ -107,6 +107,7 @@ const DAYS = [
 const BACKUP_PLACES = [
   ['Gonaeri 港前海岸道路・海豚觀察','스탠포드호텔앤리조트 제주','景點／體驗','涯月','제주시 애월읍 애월해안로 406 · Stanford Hotel & Resort Jeju 正前方海岸',33.4719812,126.3523228,'必去。海豚觀察起點以 Stanford Hotel 正前方海岸定位，建議 08:50 左右短停看海；野生海豚並非每天同時出現，請保持距離、不餵食。'],
   ['ASISI 涯月紀念品','애월아시시','購物／伴手禮','涯月','제주시 애월읍 애월해안로 474 지하1층',33.4776303,126.3549963,'必去。紀念品、香氛與咖啡甜點可一起採買；圖釘已依門市座標校正。'],
+  ['濟州堂 Jejudang','제주당','咖啡甜點','涯月／西線','제주시 애월읍 월각로 927',33.3643380,126.3552026,'D5 固定午餐／烘焙咖啡。農場風大型空間，使用濟州食材；Naver Map 搜尋「제주당」。一般 10:00–21:00，餐廳最後點餐 18:30、咖啡最後點餐 20:30，當日公告優先。'],
   ['鹽田春天 Aewol 店','소금빵집 봄날 애월점','咖啡甜點','涯月','店點尚待確認；暫不顯示圖釘',null,null,'公開地圖目前無法核實此韓文店名與原址的一致性；為避免把你導到錯店，請出發前用店家社群／Naver Map 最新貼文確認後再補點。'],
   ['Haejigae 海景咖啡','해지개','咖啡甜點','涯月','제주시 애월읍 애월북서길 52',33.4643244,126.3089916,'可看海與夕陽，適合作為涯月的替代咖啡。'],
   ['Fritz Coffee Company 濟州城山店','프릳츠 제주성산점','咖啡甜點','城山','서귀포시 성산읍 일출로 222',33.4594235,126.9301249,'知名烘豆咖啡；這是城山店，非舊清單中的東線錯誤圖釘。'],
@@ -228,6 +229,7 @@ const BOOKING_GUIDES = {
   '워터월드 제주 원피스': { label: '先確認展期與票券', text: '展覽檔期與票種可能變動，先確認當日是否仍展出及最後入場；確認後再買票，勿先把不可退票券綁死下午行程。' },
   '용머리해안': { label: '不能預約：看海況', text: '入內受潮汐、風浪與安全管制影響；當天開放才買現場票。不要先買其他不可調整的行程來配合它。' },
   '아르떼뮤지엄 제주': { label: '建議：先買電子票', text: '可先於官方網站買電子票以減少現場購票；通常非指定時段，仍要依當日閉館與最後入場時間決定是否前往。', url: 'https://artemuseum.com/jeju/', link: 'ARTE Museum 官方票券' },
+  '제주당': { label: '現場入店／無須預約', text: '一般可直接入店；D5 是午餐時段，入內先確認鹹食出餐時間與是否有候位。官方資訊列餐廳最後點餐 18:30、咖啡最後點餐 20:30；營業時間如有調整以店家當日公告為準。', url: 'https://www.visitjeju.net/en/detail/view?contentsid=CNTS_300000000013066', link: '官方店家資訊' },
   '여왕한복': { label: '必做：先選店後預約', text: '韓服租借需預約才能保留尺寸與拍攝時段。此手冊目前僅存區域定位，請先用韓文名在 Naver Map 確認實際門市，再從店家 Naver 預約／KakaoTalk 預約完成後更新導航點。' },
   '한림칼국수': { label: '現場候位', text: '未確認可供旅客使用的官方遠端候位；本店位於 한림해안로 141、週三休。午餐尖峰到店先抽現場號，超過 20 分鐘就改協載刀削麵。' },
   '문쏘 제주협재점': { label: '現場候位／建議 11:40 前到', text: '官方旅遊資訊列週三休、10:30–20:00，16:00–17:00 暫停營業、19:10 最後點餐；店內座位有限，黃蟹咖哩與鯖魚飯可能售完。D6 是週六，抵達後先問候位與限量菜，若等候超過 25 分鐘就改協載海女之家。', url: 'https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=193959', link: '官方店家資訊' },
@@ -255,6 +257,7 @@ const ORDER_GUIDES = {
   '흑돈향 흑돼지': '兩人先點黑豬五花／頸肉各一份，搭멜젓與烤泡菜；澱粉只在最後加一份炒飯或冷麵，市場甜點就不再加。',
   '오설록 티뮤지엄': '早餐已在飯店完成；這一站兩人只選 1 杯茶飲＋1 份綠茶甜點／麵包分食，不點多份冰淇淋，以免 D5 午餐吃不下。',
   '인스밀 제주': '每人一份主食即可，再共享一杯飲料；先確認出餐時間，若候位超過 20 分鐘就改附近簡餐，不加點會拖時間的甜點。',
+  '제주당': '兩人先共享 1 份鹹食主餐（義大利麵／早午餐類），再挑 1 個濟州食材麵包分食；推薦從胡蘿蔔、玉米、地瓜等季節麵包中選一個，飲料各一杯即可。不要一次拿太多甜麵包，晚餐仍是 BHC。',
   'BHC 치킨': '兩人點半半炸雞或小份炸雞＋1 份起司球／起司條即可；在 Baemin 訂單備註「飯店大廳交付」，拿到立刻確認醬料與飲料。',
   '한림칼국수': '兩人各點 1 碗保末刀削麵（보말칼국수）與肉刀削麵分著吃；若想加點，只共享 1 份保末粥或海菜煎餅，別點過量影響下午西線行程。',
   '문쏘 제주협재점': '兩人首選 1 份整隻黃蟹咖哩（황게카레）共享，再搭 1 份鯖魚飯（고등어밥）或黑豬肉丼（흑돼지덮밥）；不要兩份都點咖哩。若鯖魚飯售完，就選黑豬肉丼，避免改點麵食。',
@@ -306,6 +309,7 @@ const VISIT_INFO = {
   '쇠소깍': { label: '景觀免費；體驗另付', text: '峽谷全年可散步、免門票；傳統小船／獨木舟為付費體驗，夏季通常 09:00–18:00、冬季 09:00–17:00，現場候位。', url: 'https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=94895', link: '官方體驗說明' },
   '오설록 티뮤지엄': { label: '免費入館', text: '全年 09:00–18:00、夏季可能延至 19:00；博物館與茶園免票，茶館／商品另付。D5 早上到即可，不需預約。', url: 'https://www.osulloc.com/', link: '官方營業公告' },
   '본태박물관': { label: '需購票', text: '全年 10:00–18:00、最晚入館 17:00；常設展成人 30,000、青少年 20,000、兒童 10,000 韓元。一般入館不用預約；11:00 導覽要用 Naver 預約。', url: 'https://en.bontemuseum.com/visitor-information', link: '官方票價／導覽' },
+  '제주당': { label: '免費入店／消費另計', text: '大型濟州食材烘焙咖啡，無門票、依餐點消費。地址為 애월읍 월각로 927；目前常見營業 10:00–21:00，官方列餐廳最後點餐 18:30、咖啡最後點餐 20:30。', url: 'https://www.visitjeju.net/en/detail/view?contentsid=CNTS_300000000013066', link: '官方店家資訊' },
   '용머리해안': { label: '需購票／看潮汐', text: '標準 09:00–17:00、最晚 16:30；成人 2,000、13–24 歲與兒童 1,000 韓元。滿潮、強浪或壞天氣可能全天關閉，當天務必看 @6sot_official 或致電 064-794-2940。', url: 'https://m.visitjeju.net/en/detail/view?contentsid=CONT_000000000500471&menuId=DOM_700000000010773', link: '官方當日開放規則' },
   '신창풍차해안도로': { label: '戶外免費', text: '公共海岸道路無門票與固定關門時間；強風、雨勢或行程延誤就不下車久留，僅作短停拍照。' },
   '아르떼뮤지엄 제주': { label: '需購票', text: '票券與最後入場會隨季節調整；目前官方旅遊頁列最晚入場 19:00。請從官方票券頁選日期後確認當日閉館時間，再決定 D5 17:55 是否前往。', url: 'https://kr.artemuseum.com', link: '官方票券／營業公告' },
@@ -322,7 +326,7 @@ const VISIT_INFO = {
   '세화해수욕장': { label: '戶外免費', text: '海岸免費、無門票；本次已移備用，除非犧牲 Snoopy Garden 或 London Bagel 才去短停。' }
 };
 const BACKUP_TYPES = ['全部','咖啡甜點','購物／伴手禮','市場小吃','正餐','黑豬肉名店','白帶魚名店','景點／體驗'];
-const state = { day: 0, location: null, accuracy: null, selected: null, markers: [], routeLine: null, userMarker: null, accuracyCircle: null, deferredPrompt: null, backupType: '全部', backupMarkers: [] };
+const state = { day: 0, location: null, accuracy: null, selected: null, markers: [], routeLine: null, userMarker: null, accuracyCircle: null, backupUserMarker: null, backupAccuracyCircle: null, backupHasCentered: false, geoWatchId: null, deferredPrompt: null, backupType: '全部', backupMarkers: [] };
 const map = L.map('map', { zoomControl: true, preferCanvas: true }).setView([33.38, 126.55], 10);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
 const backupMap = L.map('backupMap', { zoomControl: true, preferCanvas: true }).setView([33.38, 126.55], 10);
@@ -378,7 +382,7 @@ function backupNavHtml(place) {
   const query = encodeURIComponent(`${place[1]} 제주`);
   return `<div class="popup-title">${place[0]}</div><div class="popup-address">${place[4]}</div><div class="popup-address">Naver：${place[1]}<br>座標：${Number(place[5]).toFixed(6)}, ${Number(place[6]).toFixed(6)}</div><a class="popup-nav" target="_blank" rel="noopener" href="https://map.naver.com/p/search/${encodeURIComponent(place[1])}">Naver 導航</a> · <a class="popup-nav" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${query}">Google 地圖</a>`;
 }
-function renderBackup() {
+function renderBackup(options = {}) {
   const visible = BACKUP_PLACES.filter(p => state.backupType === '全部' || p[2] === state.backupType);
   const filters = document.querySelector('#backupFilters');
   filters.innerHTML = BACKUP_TYPES.map(type => `<button class="filter-button ${state.backupType === type ? 'selected' : ''}" data-type="${type}" type="button">${type}</button>`).join('');
@@ -395,14 +399,22 @@ function renderBackup() {
   document.querySelectorAll('[data-backup-show]').forEach(btn => btn.addEventListener('click', () => {
     const place = BACKUP_PLACES[Number(btn.dataset.backupShow)]; backupMap.setView([place[5], place[6]], 15, { animate: true });
   }));
-  if (bounds.length) backupMap.fitBounds(bounds, { padding:[30,30], maxZoom:11 });
+  if (bounds.length && options.fit !== false) backupMap.fitBounds(bounds, { padding:[30,30], maxZoom:11 });
 }
 function showView(view) {
   const itinerary = view === 'itinerary';
   document.querySelector('#itineraryView').hidden = !itinerary;
   document.querySelector('#backupView').hidden = itinerary;
   document.querySelectorAll('.view-button').forEach(btn => btn.classList.toggle('active', btn.dataset.view === view));
-  setTimeout(() => { if (itinerary) map.invalidateSize(); else { backupMap.invalidateSize(); renderBackup(); } }, 0);
+  setTimeout(() => {
+    if (itinerary) { map.invalidateSize(); return; }
+    backupMap.invalidateSize();
+    if (state.location) {
+      backupMap.setView([state.location.lat,state.location.lng], 13, { animate: true });
+      state.backupHasCentered = true;
+      renderBackup({ fit:false });
+    } else renderBackup();
+  }, 0);
 }
 function renderTabs() {
   dayTabs.innerHTML = DAYS.map((d,i)=>`<button class="day-tab" role="tab" aria-selected="${i===state.day}" data-day="${i}"><strong>${d.id}</strong><small>${d.date}</small></button>`).join('');
@@ -464,13 +476,22 @@ function updateUserPosition(pos) {
     state.userMarker=L.circleMarker(ll,{radius:9,color:'#fff',weight:4,fillColor:'#2563eb',fillOpacity:1}).addTo(map).bindPopup('你的目前位置');
     state.accuracyCircle=L.circle(ll,{radius:state.accuracy,color:'#2563eb',weight:1,fillColor:'#60a5fa',fillOpacity:.12}).addTo(map);
   }
-  gpsStatus.textContent=`定位完成 · 誤差約 ${Math.round(state.accuracy)} 公尺`; gpsStatus.className='status-pill active';
-  map.setView(ll,14); renderDay();
+  if(state.backupUserMarker){state.backupUserMarker.setLatLng(ll);state.backupAccuracyCircle.setLatLng(ll).setRadius(state.accuracy);} else {
+    state.backupUserMarker=L.circleMarker(ll,{radius:9,color:'#fff',weight:4,fillColor:'#2563eb',fillOpacity:1}).addTo(backupMap).bindPopup('你的目前位置');
+    state.backupAccuracyCircle=L.circle(ll,{radius:state.accuracy,color:'#2563eb',weight:1,fillColor:'#60a5fa',fillOpacity:.12}).addTo(backupMap);
+  }
+  gpsStatus.textContent=`定位追蹤中 · 誤差約 ${Math.round(state.accuracy)} 公尺`; gpsStatus.className='status-pill active';
+  if (document.querySelector('#backupView').hidden) map.setView(ll,14); else {
+    if (state.backupHasCentered) backupMap.panTo(ll,{animate:true}); else backupMap.setView(ll,13,{animate:true});
+    state.backupHasCentered=true;
+    renderBackup({fit:false});
+  }
+  renderDay();
 }
 function locate() {
   if(!navigator.geolocation){gpsStatus.textContent='此瀏覽器不支援定位';gpsStatus.className='status-pill error';return;}
   gpsStatus.textContent='正在取得位置…'; gpsStatus.className='status-pill';
-  navigator.geolocation.getCurrentPosition(updateUserPosition,err=>{ gpsStatus.textContent=err.code===1?'請允許瀏覽器使用位置':'無法取得位置，請稍後重試'; gpsStatus.className='status-pill error'; },{enableHighAccuracy:true,timeout:12000,maximumAge:15000});
+  if (state.geoWatchId === null) state.geoWatchId=navigator.geolocation.watchPosition(updateUserPosition,err=>{ gpsStatus.textContent=err.code===1?'請允許瀏覽器使用位置':'無法取得位置，請稍後重試'; gpsStatus.className='status-pill error'; },{enableHighAccuracy:true,timeout:12000,maximumAge:15000});
 }
 function nearest() {
   if(!state.location){locate();showToast('請先允許定位，再找最近景點');return;}
@@ -484,6 +505,12 @@ document.querySelectorAll('.view-button').forEach(btn=>btn.addEventListener('cli
 document.querySelector('#fitBackupBtn').addEventListener('click',()=>{
   const visible = state.backupMarkers.map(marker => marker.getLatLng());
   if (visible.length) backupMap.fitBounds(visible,{padding:[30,30],maxZoom:11});
+});
+document.querySelector('#locateBackupBtn').addEventListener('click',()=>{
+  if(!state.location){ locate(); showToast('請允許定位後，備用地圖會自動顯示你的目前位置'); return; }
+  backupMap.setView([state.location.lat,state.location.lng],13,{animate:true});
+  state.backupHasCentered=true;
+  showToast('已顯示你附近的備用景點');
 });
 document.querySelector('#clearFiltersBtn').addEventListener('click',()=>{state.backupType='全部';renderBackup();});
 document.querySelector('#copyPlaceBtn').addEventListener('click',async()=>{if(!state.selected)return;await navigator.clipboard.writeText(state.selected[2]);showToast('已複製韓文地標名稱');});

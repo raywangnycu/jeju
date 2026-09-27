@@ -78,7 +78,7 @@
       <div class="backup-workspace">
         <div class="map-column backup-map-column">
           <div id="backupMap" aria-label="濟州島備用景點餐廳與逛街地圖"></div>
-          <div class="map-tools"><button id="fitBackupBtn" type="button">顯示所有已選點</button><button id="clearFiltersBtn" type="button">顯示全部</button></div>
+          <div class="map-tools"><button id="locateBackupBtn" type="button">定位／顯示附近</button><button id="fitBackupBtn" type="button">顯示所有已選點</button><button id="clearFiltersBtn" type="button">顯示全部</button></div>
           <p class="map-credit">圖例依類型著色；點選圖釘可直接開啟 Google、Naver 或 Kakao 導航。</p>
         </div>
         <div class="backup-list-column">
@@ -86,10 +86,10 @@
           <div id="backupList" class="backup-list"></div>
         </div>
       </div>
-      <section class="route-guides" aria-label="五個必去景點現場攻略">
+      <section class="route-guides" aria-label="濟州旅程現場攻略">
         <div class="guide-heading">
           <p class="eyebrow">WALK IT LIKE A LOCAL</p>
-          <h2>五個必去點：到現場照著走</h2>
+          <h2>現場攻略：到當地照著走</h2>
           <p>店鋪營業與攤位位置可能調整；本區把「入口、最短動線、值得買的東西」分開寫，抵達後先以韓文地標和現場招牌核對。</p>
         </div>
         <div class="guide-grid">
@@ -157,6 +157,19 @@
             <p class="guide-tip">停車可看 <b>제일공영주차장</b>、<b>중앙주차장</b> 或 <b>칠성1주차장</b>；自駕不要把車開進巷內找店。</p>
             <p class="guide-links"><a href="https://www.visitjeju.net/en/detail/view?contentsid=CNTS_200000000012176" target="_blank" rel="noopener">官方商街資訊</a><a href="https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%EC%A4%91%EC%95%99%EC%A7%80%ED%95%98%EC%83%81%EA%B0%80" target="_blank" rel="noopener">Naver 導航</a></p>
           </article>
+          <article class="route-guide-card">
+            <p class="guide-kicker">全程購物 · 韓國旅客退稅</p>
+            <h3>濟州離境：退稅照這個順序</h3>
+            <p class="guide-address">Tax Refund／Tax Free 標誌店家 · 제주국제공항</p>
+            <ol>
+              <li><strong>結帳時先問：</strong>看店門口或收據是否有 <em>Tax Refund／Tax Free</em> 標誌。出示<strong>實體護照</strong>，索取退稅單；每張收據滿 ₩15,000 才符合一般退稅門檻。</li>
+              <li><strong>能即退就即退：</strong>店家若可即時退稅，護照驗證後直接扣稅付款。單筆須低於 ₩1,000,000、整趟韓國旅程累計不超過 ₩5,000,000；即退後仍把商品與單據留到出境。</li>
+              <li><strong>機場最重要：</strong>要託運退稅商品時，先辦報到但<strong>不要先把行李交出去</strong>。帶商品、護照、登機證與退稅單依現場指示至 KIOSK／海關確認；被指定檢查時需出示實物，確認後才能託運。</li>
+              <li><strong>最後領款：</strong>安檢後或機場指定 Tax Refund 櫃台／自助機，以已確認的單據辦退款。濟州機場櫃位可能調整，當天直接問資訊台；若櫃台關閉，依現場指定郵箱或流程辦理。</li>
+            </ol>
+            <p class="guide-tip">不可退：已開封／使用商品、熟食、按摩等無法供海關查驗的服務，以及本來在免稅店購買的商品。一般退稅商品須於購買日起 3 個月內攜出韓國。</p>
+            <p class="guide-links"><a href="https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=489&vcontsId=248768" target="_blank" rel="noopener">VISITKOREA 最新退稅指南</a><a href="https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140736" target="_blank" rel="noopener">官方機場流程</a></p>
+          </article>
         </div>
       </section>
       <aside class="field-notes" aria-label="旅行現場提醒">
@@ -186,6 +199,6 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="app.js?v=20260927-23"></script>
+  <script src="app.js?v=20260927-25"></script>
 </body>
 </html>
